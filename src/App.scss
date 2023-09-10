@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Source+Sans+Pro:wght@600&display=swap');
+
+$green: #26a69a;
+@mixin blue {
+	background-color: #5465ff !important;
+	* {
+		color: #fff !important;
+		fill: #fff !important;
+	}
+}
+@mixin orange {
+	background-color: #ffb444 !important;
+	* {
+		color: #000 !important;
+		fill: #000 !important;
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box !important;
+	font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+html {
+	font-size: 18px;
+
+	@media only screen and (max-width: 768px) {
+		font-size: 16px;
+	}
+}
+
+nav,
+footer {
+	height: 64px;
+
+	.icon-link {
+		display: flex !important;
+		padding: 10px !important;
+		border-radius: 50%;
+
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.1);
+		}
+
+		svg {
+			width: 40px;
+		}
+	}
+
+	.brand-logo {
+		line-height: 64px;
+	}
+
+	@media only screen and (max-width: 768px) {
+		font-size: 16px;
+
+		.brand-logo {
+			width: 100%;
+			text-align: center;
+			font-size: 1.6rem !important;
+		}
+	}
+}
+
+nav {
+	@include orange;
+
+	* {
+		font-family: 'DynaPuff', cursive !important;
+	}
+
+	ul,
+	li {
+		height: 100%;
+	}
+
+	li {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+main {
+	min-height: calc(100vh - 64px - 64px);
+	padding: 1rem 0;
+}
+
+footer {
+	padding-top: 0 !important;
+	@include blue;
+
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}

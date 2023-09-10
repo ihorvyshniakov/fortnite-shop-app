@@ -1,9 +1,14 @@
-import './App.css';
+import './App.scss';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Shop from './components/Shop';
 
 function App() {
 	return (
 		<>
-			<h1>Fortnite shop</h1>
+			<Header />
+			<Shop />
+			<Footer />
 		</>
 	);
 }
