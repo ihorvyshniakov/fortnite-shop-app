@@ -15,7 +15,7 @@ const Shop = () => {
 		})
 			.then(response => response.json())
 			.then(data => {
-				const filtererGoods = data?.shop?.map(item => {
+				const filtererGoods = data?.shop?.slice(0, 20).map(item => {
 					return {
 						...item,
 						granted: {
