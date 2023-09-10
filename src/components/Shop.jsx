@@ -19,7 +19,7 @@ const Shop = () => {
 					return {
 						...item,
 						granted: {
-							...item.granted[0]
+							...item.granted[item.granted.length - 1]
 						}
 					};
 				});

@@ -1,8 +1,9 @@
 import GoodsItem from './GoodsItem';
+import NotFound from './NotFound';
 
 const GoodsList = ({ goods = [] }) => {
 	if (!goods.length) {
-		return <h3>There is no goods </h3>;
+		return <NotFound />;
 	}
 
 	return (

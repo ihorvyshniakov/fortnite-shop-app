@@ -99,6 +99,17 @@ main {
 	position: relative;
 }
 
+.not-found {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	img {
+		display: inline-block;
+	}
+}
+
 .circleLoader {
 	min-height: 300px;
 	display: flex;
