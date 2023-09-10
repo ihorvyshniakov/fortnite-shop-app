@@ -10,8 +10,8 @@ const Header = () => {
 				<ul id='nav-mobile' className='right'>
 					<li>
 						<a
-							className='icon-link'
-							href='https://github.com/ihorvyshniakov/movies-app'
+							className='icon-link right'
+							href='https://github.com/ihorvyshniakov/fortnite-shop'
 							target='_blank'
 							rel='noreferrer'
 						>
