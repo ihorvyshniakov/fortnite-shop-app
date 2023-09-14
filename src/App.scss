@@ -151,6 +151,28 @@ main {
 .cart-quantity {
 }
 
+.basket-list {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: white;
+	width: 50rem;
+	max-width: 95%;
+	box-shadow: 0px 0px 10px 10px #00000066;
+}
+
+.basket-delete {
+	cursor: pointer;
+}
+
+.basket-close {
+	cursor: pointer;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
 footer {
 	padding-top: 0 !important;
 	@include blue;
