@@ -13,15 +13,21 @@ const Shop = () => {
 	const addOrder = newItem => {
 		setOrders(prevOrder => {
 			const isItemAlreadyBought = prevOrder.some(
-				oldItem => oldItem.offerId === newItem.offerId
+				oldItem => oldItem.id === newItem.id
 			);
 
 			if (!isItemAlreadyBought) {
-				return [...prevOrder, newItem];
+				return [
+					...prevOrder,
+					{
+						...newItem,
+						quantity: 1
+					}
+				];
 			}
 
 			return prevOrder.map(i => {
-				if (i.offerId !== newItem.offerId) {
+				if (i.id !== newItem.id) {
 					return i;
 				}
 				return {

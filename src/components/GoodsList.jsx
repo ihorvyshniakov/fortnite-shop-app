@@ -1,7 +1,7 @@
 import GoodsItem from './GoodsItem';
 import NotFound from './NotFound';
 
-const GoodsList = ({ goods = [], addOrder }) => {
+const GoodsList = ({ goods = [], addOrder = Function.prototype }) => {
 	if (!goods.length) {
 		return <NotFound />;
 	}
@@ -9,7 +9,7 @@ const GoodsList = ({ goods = [], addOrder }) => {
 	return (
 		<div className='goods'>
 			{goods.map(item => (
-				<GoodsItem key={item.offerId} addOrder={addOrder} item={item} />
+				<GoodsItem key={item.id} addOrder={addOrder} item={item} />
 			))}
 		</div>
 	);

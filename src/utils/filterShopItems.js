@@ -4,22 +4,12 @@ const filterShopItems = items => {
 	const cloneItems = [...items].slice(0, ITEMS_NEEDED);
 
 	return cloneItems.map(
-		({
-			offerId,
-			mainId,
-			displayName,
-			displayDescription,
-			price,
-			granted
-		}) => ({
-			offerId,
-			mainId,
-			displayName,
-			displayDescription,
-			price,
-			granted: {
-				images: granted[granted.length - 1].images
-			}
+		({ offerId, displayName, displayDescription, price, granted }) => ({
+			id: offerId,
+			name: displayName,
+			description: displayDescription,
+			price: price.finalPrice,
+			imageURL: granted[granted.length - 1].images.full_background
 		})
 	);
 };
