@@ -1,7 +1,7 @@
 import GoodsItem from './GoodsItem';
 import NotFound from './NotFound';
 
-const GoodsList = ({ goods = [] }) => {
+const GoodsList = ({ goods = [], addOrder }) => {
 	if (!goods.length) {
 		return <NotFound />;
 	}
@@ -9,7 +9,7 @@ const GoodsList = ({ goods = [] }) => {
 	return (
 		<div className='goods'>
 			{goods.map(item => (
-				<GoodsItem key={item.offerId} {...item} />
+				<GoodsItem key={item.offerId} addOrder={addOrder} item={item} />
 			))}
 		</div>
 	);

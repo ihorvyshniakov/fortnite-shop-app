@@ -9,6 +9,28 @@ const Shop = () => {
 	const [loading, setLoading] = useState(true);
 	const [orders, setOrders] = useState([]);
 
+	const addOrder = newItem => {
+		setOrders(prevOrder => {
+			const isItemAlreadyBought = prevOrder.some(
+				oldItem => oldItem.offerId === newItem.offerId
+			);
+
+			if (!isItemAlreadyBought) {
+				return [...prevOrder, newItem];
+			}
+
+			return prevOrder.map(i => {
+				if (i.offerId !== newItem.offerId) {
+					return i;
+				}
+				return {
+					...i,
+					quantity: i.quantity++
+				};
+			});
+		});
+	};
+
 	useEffect(function getGoods() {
 		fetch(API_URL, {
 			headers: {
@@ -37,7 +59,7 @@ const Shop = () => {
 	return (
 		<main className='container content'>
 			<Cart quantity={orders.length} />
-			<GoodsList goods={goods} />
+			<GoodsList goods={goods} addOrder={addOrder} />
 		</main>
 	);
 };

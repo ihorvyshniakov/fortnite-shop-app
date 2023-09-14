@@ -1,12 +1,15 @@
 const GoodsItem = props => {
 	const {
-		mainId,
-		displayName,
-		displayDescription,
-		price: { finalPrice },
-		granted: {
-			images: { full_background }
-		}
+		item: {
+			mainId,
+			displayName,
+			displayDescription,
+			price: { finalPrice },
+			granted: {
+				images: { full_background }
+			}
+		},
+		addOrder
 	} = props;
 
 	return (
@@ -19,7 +22,17 @@ const GoodsItem = props => {
 				<p>{displayDescription}</p>
 			</div>
 			<div className='card-action'>
-				<button className='btn'>Buy</button>
+				<button
+					className='btn'
+					onClick={() =>
+						addOrder({
+							...props.item,
+							quantity: 1
+						})
+					}
+				>
+					BUY
+				</button>
 				<span className='right' style={{ fontSize: '1.5rem' }}>
 					{finalPrice}$
 				</span>
