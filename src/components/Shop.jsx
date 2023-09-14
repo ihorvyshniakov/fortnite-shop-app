@@ -3,6 +3,7 @@ import { API_KEY, API_URL } from '../../config';
 import Preloader from './Preloader';
 import GoodsList from './GoodsList';
 import Cart from './Cart';
+import filterShopItems from '../utils/filterShopItems';
 
 const Shop = () => {
 	const [goods, setGoods] = useState([]);
@@ -39,15 +40,8 @@ const Shop = () => {
 		})
 			.then(response => response.json())
 			.then(data => {
-				const filtererGoods = data?.shop?.slice(0, 20).map(item => {
-					return {
-						...item,
-						granted: {
-							...item.granted[item.granted.length - 1]
-						}
-					};
-				});
-				filtererGoods && setGoods([...filtererGoods]);
+				const filteredItems = filterShopItems(data?.shop);
+				setGoods([...filteredItems]);
 				setLoading(false);
 			});
 	}, []);
