@@ -21,7 +21,7 @@ $green: #26a69a;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box !important;
-	font-family: 'Source Sans Pro', sans-serif !important;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 html {
@@ -132,6 +132,23 @@ main {
 			flex-grow: 1;
 		}
 	}
+}
+
+.cart {
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	cursor: pointer;
+	z-index: 1;
+	padding: 1rem;
+
+	@media (min-width: 768px) {
+		top: 5rem;
+		bottom: unset;
+	}
+}
+
+.cart-quantity {
 }
 
 footer {
