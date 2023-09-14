@@ -9,7 +9,7 @@ const GoodsList = ({ goods = [] }) => {
 	return (
 		<div className='goods'>
 			{goods.map(item => (
-				<GoodsItem key={item.mainId} {...item} />
+				<GoodsItem key={item.offerId} {...item} />
 			))}
 		</div>
 	);
