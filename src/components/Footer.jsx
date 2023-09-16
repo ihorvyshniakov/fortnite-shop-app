@@ -9,7 +9,7 @@ const Footer = () => {
 					className='grey-text text-lighten-4 right icon-link'
 					target='_blank'
 					rel='noreferrer'
-					href='https://github.com/ihorvyshniakov/fortnite-shop'
+					href='https://github.com/ihorvyshniakov/fortnite-shop-app'
 				>
 					<GithubSVG className='icon' />
 				</a>

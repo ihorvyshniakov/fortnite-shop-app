@@ -11,7 +11,7 @@ const Header = () => {
 					<li>
 						<a
 							className='icon-link right'
-							href='https://github.com/ihorvyshniakov/fortnite-shop'
+							href='https://github.com/ihorvyshniakov/fortnite-shop-app'
 							target='_blank'
 							rel='noreferrer'
 						>
