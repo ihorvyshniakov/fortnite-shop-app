@@ -4,7 +4,7 @@ const Footer = () => {
 	return (
 		<footer className='page-footer'>
 			<div className='container'>
-				© 2022 Developed by Vyshniakov Ihor
+				© 2023 Developed by Vyshniakov Ihor
 				<a
 					className='grey-text text-lighten-4 right icon-link'
 					target='_blank'
