@@ -5,12 +5,17 @@ import GoodsList from './GoodsList';
 import Cart from './Cart';
 import filterShopItems from '../utils/filterShopItems';
 import BasketList from './BasketList';
+import Alert from './Alert';
+
+// TODO: save cart in localStorage
+// TODO: add button clear all cart
 
 const Shop = () => {
 	const [goods, setGoods] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [orders, setOrders] = useState([]);
 	const [isBasketShow, setIsBasketShow] = useState(false);
+	const [alertName, setAlertName] = useState('');
 
 	const addOrder = newItem => {
 		setOrders(prevOrder => {
@@ -38,6 +43,7 @@ const Shop = () => {
 				};
 			});
 		});
+		setAlertName(newItem.name);
 	};
 
 	const removeOrder = itemId => {
@@ -75,6 +81,10 @@ const Shop = () => {
 				return el;
 			})
 		);
+	};
+
+	const closeAlert = () => {
+		setAlertName('');
 	};
 
 	const handleBasketShow = () => {
@@ -115,6 +125,7 @@ const Shop = () => {
 					decrementQuantity={decrementQuantity}
 				/>
 			)}
+			{alertName && <Alert name={alertName} closeAlert={closeAlert} />}
 		</main>
 	);
 };

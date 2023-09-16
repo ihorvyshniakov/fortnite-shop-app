@@ -35,7 +35,10 @@ const BasketList = ({
 			) : (
 				<li className='collection-item'>No products</li>
 			)}
-			<li className='collection-item active'>Total: {totalPrice}$</li>
+			<li className='collection-item'>
+				Total: {totalPrice}$
+				<button className='secondary-content btn'>Pay</button>
+			</li>
 		</ul>
 	);
 };
