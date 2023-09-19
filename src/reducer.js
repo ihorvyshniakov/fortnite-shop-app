@@ -27,7 +27,7 @@ export function reducer(state, { type, payload }) {
 					}
 					return {
 						...i,
-						quantity: i.quantity++
+						quantity: i.quantity + 1
 					};
 				});
 			}
