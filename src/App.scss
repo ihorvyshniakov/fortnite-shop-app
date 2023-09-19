@@ -109,6 +109,7 @@ main {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 
 	img {
 		display: inline-block;
@@ -141,7 +142,7 @@ main {
 
 .cart {
 	position: fixed;
-	bottom: 2rem;
+	bottom: 5rem;
 	right: 2rem;
 	cursor: pointer;
 	z-index: 1;

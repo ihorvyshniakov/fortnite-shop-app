@@ -1,6 +1,6 @@
 const ITEMS_NEEDED = 8;
 
-const filterShopItems = items => {
+const filterShopItems = (items = []) => {
 	const cloneItems = [...items].slice(0, ITEMS_NEEDED);
 
 	return cloneItems.map(
